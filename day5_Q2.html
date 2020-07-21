@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS DAY 5</title>
+        <h3>Question: 2 🌚</h3><br>
+        <script>
+            class User {
+                constructor(name, age,email) {
+                this.name = name;
+                this.age = age;
+                this.email = email;
+                
+                }
+
+                static greet(){
+                    console.log("Hello There");
+                }
+
+                login(){
+                    console.log(`${this.name} has logged in`);
+                    return this;
+                }
+                logout(){
+                    console.log(`${this.name} has logged out`);
+                    return this;
+                }
+                getDetails(){
+                    console.log(`Name is ${this.name}, email is ${this.email}`);
+                    return this;
+                }
+
+            }
+
+            class Moderator extends User{
+                constructor(name,age,email,luCoins){
+                    super(name,age,email);
+                    this.luCoins = 0;
+                }
+                addCoins(){
+                    this.luCoins++;
+                    console.log(`${this.name} has ${this.luCoins} coins`);
+                    return this;
+                }
+                delCoins(){
+                    this.luCoins--;
+                    console.log(`${this.name} has ${this.luCoins} coins`);
+                    return this;
+                }
+            }
+
+            class Admin extends Moderator{
+                constructor(name,age,email,luCoins,courses){
+                    super(name,age,email,luCoins);
+                    this.courses = [];
+                }
+                addCourse(user,course){
+                    User.courses.push(course);
+                    console.log(User);
+                }
+                delCourse(user,course){
+                    User.courses.remove(course);
+                    console.log(User);
+                }
+            }
+
+            let user1 = new User('Preeti',20,'p@gmail.com')
+            let mod = new Moderator('Kriti',21,'k@gmail.com');
+            let admin = new Admin('Dipti',22,'d@gmail.com');
+            let users = [user1,mod,admin];
+
+            users.forEach(element => {
+                console.log(element);
+            });
+
+            user1.login().getDetails().logout();            
+        </script>
+    </head>
+    <body>
+        
+    </body> 
+</html>

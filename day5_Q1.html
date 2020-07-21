@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS DAY 5</title>
+        <h3>Question: 1 🌚</h3><br>
+        <script>
+            var n = prompt("Enter How many numbers you want? : ");
+            var elements = [];
+            for(var i=1; i<=n; i++) {
+            	elements[i] = prompt('Enter Element ' + i + ': ');
+            }
+            
+            let odd = elements.filter((el)=> el % 2 != 0);
+            console.log(odd);
+
+            let oddCubes = elements.filter((el)=> el % 2 != 0).map(el=>el**3);
+            console.log(oddCubes);
+            
+        </script>
+    </head>
+    <body>
+        
+    </body> 
+</html>
